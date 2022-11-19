@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitAPITrainingPlotExport", "RevitAPITrainingPlotExport.csproj", "{00009B26-67B3-44D1-AB5C-9EE3EA3B171C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00009B26-67B3-44D1-AB5C-9EE3EA3B171C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00009B26-67B3-44D1-AB5C-9EE3EA3B171C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00009B26-67B3-44D1-AB5C-9EE3EA3B171C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00009B26-67B3-44D1-AB5C-9EE3EA3B171C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3925A8A-FE53-48BE-B0DA-01F93FE44E5A}
+	EndGlobalSection
+EndGlobal

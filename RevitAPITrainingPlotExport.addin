@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+	<AddIn Type="Command">
+		<Assembly>"C:\Program Files\RevitAPITraining\RevitAPITrainingPlotExport.dll"</Assembly>
+		<AddInId>95E0F0DE-4268-4925-A5C4-038D23518A38</AddInId>
+	    <FullClassName>RevitAPITrainingPlotExport.Main</FullClassName>
+	    <VendorId>ADSK</VendorId>
+	    <Text>Модуль 8</Text>
+	</AddIn>
+</RevitAddIns>
