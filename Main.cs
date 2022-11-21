@@ -16,19 +16,19 @@ namespace RevitAPITrainingPlotExport
         {
             Document doc = commandData.Application.ActiveUIDocument.Document;
 
-            using (var ts = new Transaction(doc, "export IFC"))
-            {
-                ts.Start();
+            //using (var ts = new Transaction(doc, "export IFC"))
+            //{
+            //    ts.Start();
                 ViewPlan viewPlan = new FilteredElementCollector(doc)
                                     .OfClass(typeof(ViewPlan))
                                     .Cast<ViewPlan>()
                                     .FirstOrDefault(v => v.ViewType == ViewType.FloorPlan &&
                                                     v.Name.Equals("Level 1"));
-                var IFC = new IFCExportOptions();
-                doc.Export(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "export.ifc",
-                      IFC);
-                ts.Commit();
-            }
+                var nevis = new NavisworksExportOptions();
+                doc.Export(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "export.nwd",
+                      nevis);
+            //    ts.Commit();
+            //}
 
             return Result.Succeeded;
         }
