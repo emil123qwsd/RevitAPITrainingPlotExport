@@ -16,17 +16,49 @@ namespace RevitAPITrainingPlotExport
         {
             Document doc = commandData.Application.ActiveUIDocument.Document;
 
+            //UIDocument uidoc = this.ActiveUIDocument;
+            //Document doc = uidoc.Document;
+            Autodesk.Revit.DB.View view = doc.ActiveView;
+
+            Transaction ts = new Transaction(doc, "apply Filter");
+            ts.Start();
+
+            ImageExportOptions img = new ImageExportOptions();
+
+
+
+            img.ZoomType = ZoomFitType.FitToPage;
+            img.PixelSize = 1900;
+
+
+
+            img.ImageResolution = ImageResolution.DPI_600;
+
+            img.FitDirection = FitDirectionType.Horizontal;
+
+
+            img.ExportRange = ExportRange.CurrentView;
+            img.HLRandWFViewsFileType = ImageFileType.PNG;
+            string DEsktoppath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            img.FilePath = DEsktoppath + @"\" + view.Name;
+            img.ShadowViewsFileType = ImageFileType.PNG;
+
+            doc.ExportImage(img);
+
+            ts.Commit();
+
+
             //using (var ts = new Transaction(doc, "export IFC"))
             //{
             //    ts.Start();
-                ViewPlan viewPlan = new FilteredElementCollector(doc)
-                                    .OfClass(typeof(ViewPlan))
-                                    .Cast<ViewPlan>()
-                                    .FirstOrDefault(v => v.ViewType == ViewType.FloorPlan &&
-                                                    v.Name.Equals("Level 1"));
-                var nevis = new NavisworksExportOptions();
-                doc.Export(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "export.nwd",
-                      nevis);
+            //    ViewPlan viewPlan = new FilteredElementCollector(doc)
+            //                        .OfClass(typeof(ViewPlan))
+            //                        .Cast<ViewPlan>()
+            //                        .FirstOrDefault(v => v.ViewType == ViewType.FloorPlan &&
+            //                                        v.Name.Equals("Level 1"));
+            //    var nevis = new NavisworksExportOptions();
+            //    doc.Export(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "export.nwd",
+            //          nevis);
             //    ts.Commit();
             //}
 
